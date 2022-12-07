@@ -11,8 +11,10 @@ pipeline {
         stage('Build Docker Container') {
             steps {
                 script {
-                    sh "mvn -B -DskipTests clean install"
+                    sh 'mvn -B -DskipTests clean install'
                     
                 }
             }
         }
+    }
+}
