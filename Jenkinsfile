@@ -1,20 +1,5 @@
-pipeline {
-    agent {
-        label 'jenkins-server'
-    }
-    stages {
-        stage('Checkout Code') {
-            steps {
-                checkout scm
-            }
-        }
-        stage('Build Docker Container') {
-            steps {
-                script {
-                    sh 'mvn -B -DskipTests clean install'
-                    
-                }
-            }
-        }
-    }
+#!/usr/bin/env groovy
+node ('SMARTHIS-debstacks0001') {
+    echo "Hello Maven!!!"
+    sh "mvn -B -DskipTests clean install"
 }
