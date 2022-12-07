@@ -2,7 +2,7 @@ pipeline {
     agent {
         node {
             label 'my first build'
-            customworkspace '/opt/maven/'
+            customWorkspace '/opt/maven/'
         } 
     }
     stages {
