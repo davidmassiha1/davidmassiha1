@@ -1,5 +1,8 @@
 #!/usr/bin/env groovy
-node ("jenkins-server") {
+node 
+ {
+    stage('building stage') {
     echo "Hello Maven!!!"
-    sh "mvn -B -DskipTests clean install"
+    sh '/opt/maven/bin/mvn clean install'
+}
 }
