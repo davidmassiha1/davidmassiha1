@@ -1,13 +1,9 @@
 pipeline {
-    agent {
-        node {
-            label 'my first build'
-            customWorkspace '/opt/maven/'
-        } 
-    }
+    agent none
     stages {
         stage('Build') { 
             steps {
+                echo "Hello Maven!!!"
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
