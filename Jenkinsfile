@@ -1,13 +1,18 @@
 pipeline {
     agent {
-        node { label 'jenkins-server'}
+        label 'jenkins-server'
     }
     stages {
-        stage('Build') { 
+        stage('Checkout Code') {
             steps {
-                echo "Hello Maven!!!"
-                sh 'mvn -B -DskipTests clean package' 
+                checkout scm
             }
         }
-    }
-}
+        stage('Build Docker Container') {
+            steps {
+                script {
+                    sh "mvn -B -DskipTests clean install"
+                    
+                }
+            }
+        }
