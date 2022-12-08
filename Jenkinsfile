@@ -1,10 +1,16 @@
 #!/usr/bin/env groovy
-node 
- {
-    stage('building stage') {
-    echo "Hello Maven!!!"
-    sh '/opt/maven/bin/mvn clean test'
-}
 
-    
+pipeline {
+  agent { any }
+
+  stages {
+    stage('Build Stage') {
+
+      steps {
+        sh 'mvn clean install -DskipTests'
+
+        
+      }
+
 }
+    
