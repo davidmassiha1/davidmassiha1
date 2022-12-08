@@ -3,6 +3,8 @@ node
  {
     stage('building stage') {
     echo "Hello Maven!!!"
-    sh '/opt/maven/bin/mvn clean install'
+    sh '/opt/maven/bin/mvn clean test'
 }
+
+    
 }
